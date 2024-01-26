@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+:root {
+  --base-padding: 20px;
+  --base-margin: 20px;
+  --base-border-radius: 20px;
+
+  --content-margin: 10px;
+  --content-padding: 10px;
+  --input-height: 40px;
+  --input-border-radius: 8px;
+
+  --color-rignt-gray: #cacaca;
+  --color-rignt-blue: #c6dbff;
+  --color-blue: #5ea7ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0 auto;
+  width: 80vw;
+  min-width: 800px;
+}
+
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin: var(--base-margin) 0;
+  height: 5vh;
+  line-height: 5vh;
 }
 
-.App-link {
-  color: #61dafb;
+.form-article {
+  padding: var(--base-padding);
+  border: 1px solid var(--color-rignt-blue);
+  border-radius: var(--base-border-radius);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-article form {
+  display: flex;
+}
+
+.form-article h1 {
+  line-height: var(--input-height);
+}
+
+.form-article input,
+.form-article button {
+  border-radius: var(--input-border-radius);
+}
+
+.form-article input {
+  margin-left: var(--content-margin);
+  margin-right: calc(var(--content-margin) * 3);
+  padding-left: var(--content-padding);
+  width: 25vw;
+
+  border: 1px solid var(--color-rignt-gray);
+  /* color: var(--color-rignt-gray); */
+}
+
+.form-article button {
+  width: 15vw;
+  border: none;
+  background-color: var(--color-blue);
+
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+article {
+  padding: var(--content-padding);
+}
+
+section {
+  height: 35vh;
+  overflow-y: scroll;
+}
+
+section h1 {
+  font-size: 2rem;
+}
+
+section ul li {
+  display: inline-block;
+  width: 200px;
+  margin: var(--content-margin);
+  padding: var(--content-padding);
+  height: 200px;
+
+  border: 1px solid var(--color-rignt-blue);
+  border-radius: var(--base-border-radius);
+}
+
+section ul li input {
+  float: left;
+}
+
+li {
+  list-style: none;
+  border: 1px solid pink;
 }
