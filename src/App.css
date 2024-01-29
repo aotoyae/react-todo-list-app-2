@@ -3,14 +3,32 @@
   --base-margin: 20px;
   --base-border-radius: 20px;
 
-  --content-margin: 10px;
+  --wrap-margin: 30px;
+  --wrap-padding: 30px;
+
+  --content-margin: 25px;
   --content-padding: 10px;
   --input-height: 40px;
   --input-border-radius: 8px;
+  --input-padding: 7px;
 
   --color-rignt-gray: #cacaca;
-  --color-rignt-blue: #c6dbff;
-  --color-blue: #5ea7ff;
+  --color-gray: #535353;
+  --color-rignt-blue: #a7dcff;
+  --color-blue: #006aff;
+
+  --box-shadow-gray: #dbf0ff;
+
+  --thin: 100;
+  --bold: 600;
+}
+
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
@@ -21,6 +39,8 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: "S-CoreDream-3Light";
 }
 
 body {
@@ -29,18 +49,34 @@ body {
   min-width: 800px;
 }
 
+.wrap {
+  margin: var(--wrap-margin);
+  padding: var(--wrap-padding);
+
+  border-radius: 50px;
+  box-shadow: 3px 3px 30px 10px var(--box-shadow-gray);
+}
+
 header {
   display: flex;
   justify-content: space-between;
   margin: var(--base-margin) 0;
   height: 5vh;
+
   line-height: 5vh;
 }
 
+header h3 {
+  font-weight: var(--thin);
+  color: var(--color-gray);
+}
+
 .form-article {
+  margin: var(--base-margin) 0;
   padding: var(--base-padding);
-  border: 1px solid var(--color-rignt-blue);
-  border-radius: var(--base-border-radius);
+
+  border-bottom: 1px solid var(--color-rignt-blue);
+  color: var(--color-gray);
 }
 
 .form-article form {
@@ -63,7 +99,6 @@ header {
   width: 25vw;
 
   border: 1px solid var(--color-rignt-gray);
-  /* color: var(--color-rignt-gray); */
 }
 
 .form-article button {
@@ -73,6 +108,7 @@ header {
 
   color: #fff;
   font-size: 1.6rem;
+  font-weight: var(--bold);
   cursor: pointer;
 }
 
@@ -81,30 +117,85 @@ article {
 }
 
 section {
-  height: 35vh;
-  overflow-y: scroll;
+  height: 34vh;
+  overflow-x: scroll;
 }
 
-section h1 {
-  font-size: 2rem;
+.todo-title,
+.ongoing-title,
+.done-title {
+  padding-bottom: var(--base-padding);
+
+  font-size: 3rem;
+}
+
+.todo-title {
+  color: var(--color-blue);
+}
+
+.ongoing-title {
+  color: var(--color-rignt-blue);
+}
+
+.done-title {
+  color: var(--color-rignt-gray);
 }
 
 section ul li {
   display: inline-block;
-  width: 200px;
-  margin: var(--content-margin);
+  margin: 0 var(--content-margin) var(--content-margin) var(--content-margin);
   padding: var(--content-padding);
+  width: 200px;
   height: 200px;
 
-  border: 1px solid var(--color-rignt-blue);
+  list-style: none;
   border-radius: var(--base-border-radius);
+  box-shadow: 3px 3px 10px 3px var(--box-shadow-gray);
+}
+
+.todo-section ul li {
+  border: 1px solid var(--color-blue);
+}
+
+.ongoing-section ul li {
+  border: 1px solid var(--color-rignt-blue);
+}
+
+.done-section ul li {
+  border: 1px solid var(--color-rignt-gray);
+}
+
+section ul li h2 {
+  text-align: center;
+  padding-bottom: var(--input-padding);
+}
+
+section ul li p {
+  height: 48%;
+}
+
+section ul li div {
+  /* border: 1px solid red; */
+  display: flex;
+  padding-bottom: var(--input-padding);
 }
 
 section ul li input {
-  float: left;
+  accent-color: var(--color-rignt-blue);
 }
 
-li {
-  list-style: none;
-  border: 1px solid pink;
+section ul li div p {
+  /* color: red; */
+  padding: 0 3px;
+  /* float: left; */
+}
+
+section ul li button {
+  width: 180px;
+  height: 30px;
+
+  border-style: none;
+  border-radius: var(--input-border-radius);
+  background-color: var(--color-rignt-blue);
+  color: #fff;
 }
