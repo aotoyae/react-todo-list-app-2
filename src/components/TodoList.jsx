@@ -20,7 +20,15 @@ function TodoList({ todos, setTodos, todoState, stateType }) {
   return (
     <>
       <ListTitle todoState={todoState} stateType={stateType} />
-      <section>
+      <section
+        className={
+          todoState === stateType.todo
+            ? "todo-section"
+            : todoState === stateType.ongoing
+              ? "ongoing-section"
+              : "done-section"
+        }
+      >
         <ul>
           {todos
             .filter((todo) => todo.state === todoState)
