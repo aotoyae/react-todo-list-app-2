@@ -5,11 +5,11 @@ import Main from "./components/Main";
 
 function App() {
   return (
-    <>
+    <div className="wrap">
       <Header />
       <Main />
       {/* <Footer /> */}
-    </>
+    </div>
   );
 }
 
