@@ -11,7 +11,15 @@ function TodoList({ todos, setTodos, todoState, stateType }) {
     console.log(todoState);
   };
 
-  const deletTodo = (id) => {
+  const confirmDelete = (id) => {
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      deleteTodo(id);
+    } else {
+      return;
+    }
+  };
+
+  const deleteTodo = (id) => {
     const newTodos = todos.filter((todo) => todo.id !== id);
 
     setTodos(newTodos);
@@ -60,7 +68,7 @@ function TodoList({ todos, setTodos, todoState, stateType }) {
                     />
                     <p>완료</p>
                   </div>
-                  <button onClick={() => deletTodo(todo.id)}>삭제</button>
+                  <button onClick={() => confirmDelete(todo.id)}>삭제</button>
                 </li>
               );
             })}
