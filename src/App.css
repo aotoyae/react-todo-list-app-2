@@ -83,7 +83,8 @@ header h3 {
   display: flex;
 }
 
-.form-article h1 {
+.form-article h1,
+.form-article p {
   line-height: var(--input-height);
 }
 
@@ -94,11 +95,15 @@ header h3 {
 
 .form-article input {
   margin-left: var(--content-margin);
-  margin-right: calc(var(--content-margin) * 3);
+  margin-right: calc(var(--content-margin) / 4);
   padding-left: var(--content-padding);
   width: 25vw;
 
   border: 1px solid var(--color-rignt-gray);
+}
+
+.form-article p {
+  margin-right: var(--content-margin);
 }
 
 .form-article button {
