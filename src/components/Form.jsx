@@ -34,13 +34,17 @@ function Form({ todos, setTodos }) {
           value={title}
           onChange={(event) => setTitle(event.target.value)}
           placeholder="제목을 입력해 주세요."
+          maxLength={7}
         />
+        <p>{title.length}/7</p>
         <h1>Content</h1>
         <input
           value={content}
           onChange={(event) => setContent(event.target.value)}
           placeholder="내용을 입력해 주세요."
+          maxLength={44}
         />
+        <p>{content.length}/44</p>
         <button type="submit">추가하기</button>
       </form>
     </article>
