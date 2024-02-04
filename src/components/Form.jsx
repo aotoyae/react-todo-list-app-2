@@ -29,22 +29,26 @@ function Form({ todos, setTodos }) {
   return (
     <article className="form-article">
       <form onSubmit={addTodo}>
-        <h1>Title</h1>
-        <input
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-          placeholder="제목을 입력해 주세요."
-          maxLength={7}
-        />
-        <p>{title.length}/7</p>
-        <h1>Content</h1>
-        <input
-          value={content}
-          onChange={(event) => setContent(event.target.value)}
-          placeholder="내용을 입력해 주세요."
-          maxLength={44}
-        />
-        <p>{content.length}/44</p>
+        <div>
+          <h1>Title</h1>
+          <input
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+            placeholder="제목을 입력해 주세요."
+            maxLength={7}
+          />
+          <p>{title.length}/7</p>
+        </div>
+        <div>
+          <h1>Content</h1>
+          <input
+            value={content}
+            onChange={(event) => setContent(event.target.value)}
+            placeholder="내용을 입력해 주세요."
+            maxLength={44}
+          />
+          <p>{content.length}/44</p>
+        </div>
         <button type="submit">추가하기</button>
       </form>
     </article>

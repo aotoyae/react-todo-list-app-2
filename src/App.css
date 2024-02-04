@@ -6,8 +6,9 @@
   --wrap-margin: 30px;
   --wrap-padding: 30px;
 
-  --content-margin: 25px;
+  --content-margin: 10px;
   --content-padding: 10px;
+
   --input-height: 40px;
   --input-border-radius: 8px;
   --input-padding: 7px;
@@ -46,7 +47,7 @@ html {
 body {
   margin: 0 auto;
   width: 80vw;
-  min-width: 800px;
+  min-width: 600px;
 }
 
 .wrap {
@@ -83,31 +84,33 @@ header h3 {
   display: flex;
 }
 
+.form-article form div {
+  display: flex;
+  width: 45%;
+}
+
 .form-article h1,
 .form-article p {
+  margin-right: var(--content-margin);
   line-height: var(--input-height);
 }
 
 .form-article input,
 .form-article button {
+  height: var(--input-height);
   border-radius: var(--input-border-radius);
 }
 
 .form-article input {
-  margin-left: var(--content-margin);
-  margin-right: calc(var(--content-margin) / 4);
+  width: 100%;
+  margin-right: calc(var(--content-margin) / 2);
   padding-left: var(--content-padding);
-  width: 25vw;
 
   border: 1px solid var(--color-rignt-gray);
 }
 
-.form-article p {
-  margin-right: var(--content-margin);
-}
-
 .form-article button {
-  width: 15vw;
+  width: 200px;
   border: none;
   background-color: var(--color-blue);
 
@@ -122,15 +125,13 @@ article {
 }
 
 section {
-  height: 34vh;
+  height: 31vh;
   overflow-x: scroll;
 }
 
 .todo-title,
 .ongoing-title,
 .done-title {
-  padding-bottom: var(--base-padding);
-
   font-size: 3rem;
 }
 
@@ -146,11 +147,16 @@ section {
   color: var(--color-rignt-gray);
 }
 
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 section ul li {
   display: inline-block;
-  margin: 0 var(--content-margin) var(--content-margin) var(--content-margin);
+  margin: var(--content-margin) 5px;
   padding: var(--content-padding);
-  width: 200px;
   height: 200px;
 
   list-style: none;
@@ -180,7 +186,6 @@ section ul li p {
 }
 
 section ul li div {
-  /* border: 1px solid red; */
   display: flex;
   padding-bottom: var(--input-padding);
 }
@@ -190,9 +195,7 @@ section ul li input {
 }
 
 section ul li div p {
-  /* color: red; */
   padding: 0 3px;
-  /* float: left; */
 }
 
 section ul li button {
@@ -203,4 +206,40 @@ section ul li button {
   border-radius: var(--input-border-radius);
   background-color: var(--color-rignt-blue);
   color: #fff;
+}
+
+/* @media (max-width: 1024px) {
+  .form-article h1 {
+    display: block;
+  }
+
+  .form-article button {
+    font-size: 1.2rem;
+  }
+} */
+
+@media (max-width: 1000px) {
+  .form-article form {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-article form div {
+    display: block;
+    width: 49%;
+  }
+
+  .form-article h1 {
+    float: left;
+  }
+
+  .form-article input {
+    margin-bottom: var(--content-margin);
+    width: 100%;
+    float: left;
+  }
+
+  .form-article button {
+    width: 100%;
+  }
 }
